@@ -590,6 +590,13 @@ void morseLoop() {
     showHomepage();
     delay(300);
   }
+  if (touchRead(pinBackspace) < 30) {
+    if (decodedMessage.length() > 0) {
+      decodedMessage.remove(decodedMessage.length() - 1);
+      drawMorseMessage();
+      delay(300);
+    }
+  }
 }
 
 void handlePress(unsigned long t) {
